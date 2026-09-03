@@ -2,12 +2,15 @@
 /**
  * Production smoke test.
  *
- * Run against a server started with `bun run start`. Guards the two defects that
+ * Run against a server started with `bun run start`. Guards the defects that
  * shipped silently and were only visible in a production build:
  *
  *   1. The middleware redirected localhost to HTTPS, making the built site unreachable.
  *   2. The CSP combined a nonce with 'strict-dynamic' while no script carried the nonce,
  *      which blocks every script and kills React hydration.
+ *   3. The middleware itself crashed in Vercel's Edge Runtime (__dirname is not defined
+ *      inside the ua-parser-js that `next/server` bundles), returning 500 on every route
+ *      its matcher covered — including static files like /robots.txt.
  *
  * Neither is reproducible with `bun run dev`, so a unit test would not have caught them.
  *
@@ -107,6 +110,11 @@ async function main() {
   console.log('\nAssets')
   const manifestRes = await fetch(`${BASE}/manifest.json`)
   check('manifest.json is served', manifestRes.status === 200, `got ${manifestRes.status}`)
+
+  // Static files under public/ used to pass through the middleware matcher, so a
+  // crashing middleware turned them into 500s.
+  const robotsRes = await fetch(`${BASE}/robots.txt`)
+  check('robots.txt is served', robotsRes.status === 200, `got ${robotsRes.status}`)
 
   if (manifestRes.status === 200) {
     const manifest = await manifestRes.json()

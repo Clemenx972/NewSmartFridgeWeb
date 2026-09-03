@@ -41,9 +41,8 @@ smartfridge-web/
 │   ├── constants.ts                ← URLs stores, plans tarifaires, social proof, nav links
 │   └── placeholder.ts             ← ⚠️ CONTENU PROVISOIRE (témoignages, mockup app)
 ├── public/                         ← Assets statiques (favicon, og-image, etc. — à ajouter)
-├── middleware.ts                   ← Headers sécurité OWASP + HTTPS redirect
 ├── .env.local                      ← Secrets (RESEND_API_KEY — jamais committé)
-├── next.config.mjs                 ← Webpack polling HMR + optimisation images + cache
+├── next.config.mjs                 ← Headers sécurité OWASP + HMR + images + cache
 ├── tailwind.config.ts              ← Palette custom + gradient-hero
 ├── INFOS_A_REMPLIR.md              ← Guide pour remplir les vraies données de l'app
 └── PAGES_RECAP.md                  ← Ce fichier

@@ -66,7 +66,6 @@ lib/
 tests/
   unit/                 Tests Vitest
   smoke.mjs             Test HTTP contre un serveur de production
-middleware.ts           En-têtes de sécurité, redirection HTTPS
 public/                 Assets statiques
 ```
 
