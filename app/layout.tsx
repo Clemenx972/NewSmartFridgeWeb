@@ -5,8 +5,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Prefetcher } from '@/components/ui/Prefetcher'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
-import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, PLANS } from '@/lib/constants'
-import { faqs } from '@/lib/faq'
+import { SITE_NAME, SITE_URL, SITE_DESCRIPTION, PLANS, CONTACT_EMAIL } from '@/lib/constants'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -107,7 +106,7 @@ const jsonLd = {
       logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon.svg` },
       contactPoint: {
         '@type': 'ContactPoint',
-        email: 'support@smartfridge.app',
+        email: CONTACT_EMAIL,
         contactType: 'customer support',
         availableLanguage: ['French', 'English'],
       },
@@ -152,16 +151,6 @@ const jsonLd = {
           description: PLANS.diamant.tagline,
         },
       ],
-    },
-    {
-      // Feeds Google's FAQ rich result — same source as the on-page accordion.
-      '@type': 'FAQPage',
-      '@id': `${SITE_URL}/#faq`,
-      mainEntity: faqs.map((faq) => ({
-        '@type': 'Question',
-        name: faq.question,
-        acceptedAnswer: { '@type': 'Answer', text: faq.answer },
-      })),
     },
   ],
 }

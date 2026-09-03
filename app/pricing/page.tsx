@@ -2,7 +2,27 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Check, X, Info } from 'lucide-react'
 import { CTAButton } from '@/components/ui/CTAButton'
-import { PLANS, BILLING, APP_LIMITS, ADEME_WASTE } from '@/lib/constants'
+import { FAQ } from '@/components/sections/FAQ'
+import { PLANS, BILLING, APP_LIMITS, ADEME_WASTE, SITE_URL } from '@/lib/constants'
+import { faqs } from '@/lib/faq'
+
+/**
+ * Balisage FAQPage.
+ *
+ * Il vit ici et non dans le layout : Google exige que les questions balisées
+ * soient visibles sur la page qui porte le balisage. La FAQ n'étant affichée
+ * que sur cette page, le balisage doit la suivre.
+ */
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  '@id': `${SITE_URL}/pricing#faq`,
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+}
 
 // Prices come from PLANS so a price change in lib/constants.ts propagates here.
 // Hardcoding them in the title would leave a stale price in Google's results.
@@ -81,6 +101,11 @@ const plans = [
 export default function PricingPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       <section className="bg-gradient-hero pt-32 pb-20 section-padding" aria-labelledby="pricing-hero-heading">
         <div className="container-max">
           <h1 id="pricing-hero-heading" className="heading-xl text-white mb-5 max-w-3xl">
@@ -218,12 +243,14 @@ export default function PricingPage() {
             Prix TTC. Paiement par carte via {BILLING.provider}.
             Pour situer : un foyer jette en moyenne {ADEME_WASTE.perHouseholdPerYear} de
             nourriture par an ({ADEME_WASTE.source}).{' '}
-            <Link href="/security" prefetch className="text-primary-700 hover:underline">
+            <Link href="/privacy" prefetch className="text-primary-700 hover:underline">
               Comment vos données sont traitées
             </Link>
           </p>
         </div>
       </section>
+
+      <FAQ />
     </>
   )
 }
