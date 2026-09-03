@@ -127,6 +127,16 @@ async function main() {
     }
   }
 
+  // ── Cache policy ──────────────────────────────────────────────────────────
+  // When two headers() rules set the same key the last match wins, so the
+  // catch-all page rule used to overwrite the immutable asset rule.
+  console.log('\nCache policy')
+  const assetCache = (await fetch(`${BASE}/icon.svg`, { method: 'HEAD' })).headers.get('cache-control')
+  check('assets are immutable', (assetCache ?? '').includes('immutable'), `got ${assetCache}`)
+
+  const pageCache = home.headers.get('cache-control')
+  check('pages revalidate', (pageCache ?? '').includes('max-age=0'), `got ${pageCache}`)
+
   // ── Fonts must be self-hosted, not fetched from Google at render time ─────
   console.log('\nFonts')
   const cssLinks = [...html.matchAll(/href="(\/_next\/static\/css\/[^"]+)"/g)].map((m) => m[1])

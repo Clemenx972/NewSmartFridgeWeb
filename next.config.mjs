@@ -107,8 +107,12 @@ const nextConfig = {
         ],
       },
       {
-        // HTML pages: always revalidate (SSG pages get fresh content)
-        source: '/((?!_next).*)',
+        // HTML pages: always revalidate (SSG pages get fresh content).
+        // Assets are excluded explicitly: when two rules set the same header the
+        // last match wins, so a bare catch-all here silently overwrote the
+        // immutable Cache-Control above and made every image uncacheable.
+        source:
+          '/((?!_next|.*\\.(?:ico|png|svg|webp|avif|jpg|jpeg|gif|woff2?|ttf|otf)$).*)',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' },
         ],
