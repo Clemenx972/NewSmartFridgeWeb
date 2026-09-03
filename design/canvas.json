@@ -1,0 +1,54 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html",       "x": 0,    "y": 0,    "w": 1440, "h": 900,  "title": "Hero — desktop" },
+    { "file": "HeroMobile.dc.html", "x": 1560, "y": 0,    "w": 390,  "h": 844,  "title": "Hero — mobile" },
+    { "file": "Bento.dc.html",      "x": 0,    "y": 1060, "w": 1440, "h": 1020, "title": "Fonctionnalités — bento" },
+    { "file": "Proof.dc.html",      "x": 0,    "y": 2240, "w": 1440, "h": 880,  "title": "Preuve sociale" },
+    { "file": "Pricing.dc.html",    "x": 0,    "y": 3280, "w": 1440, "h": 960,  "title": "Tarifs" }
+  ],
+  "annotations": [
+    {
+      "id": "note-hero",
+      "x": 1560,
+      "y": 940,
+      "w": 390,
+      "text": "HERO — pourquoi ça change quelque chose\n\n• Un seul bouton principal. Avant : 4 CTA concurrents (Télécharger, Démo, App Store, Play). Les pages à 5+ CTA convertissent 23 % moins bien.\n\n• Le QR code remplace les deux badges de store sur desktop : personne n'installe une app mobile depuis son ordinateur. C'est le pattern d'Olio.\n\n• Le titre parle d'argent perdu, pas de fonctionnalité. 465 € est sourcé ADEME — vérifiable, donc crédible.\n\n• La preuve sociale est DANS le hero, pas en dessous : c'est ce que font toutes les pages qui convertissent en 2026."
+    },
+    {
+      "id": "note-perf",
+      "x": 1560,
+      "y": 1400,
+      "w": 390,
+      "text": "PERFORMANCE — ce que coûte cette maquette\n\n• Zéro image bitmap. Le visuel du produit est du HTML/CSS : il s'affiche avec la page, il ne peut pas décaler la mise en page, et il pèse ~0 ko de plus.\n\n• Le QR code est un SVG inline : pas de requête réseau, pas de librairie JS.\n\n• Le bento est une grille CSS pure. Aucun JavaScript ajouté.\n\n• Une seule famille de polices en deux graisses. Aujourd'hui le site en charge deux familles complètes.\n\n• Objectif : garder les 87 ko de JS partagé actuels, qui sont déjà bien au-dessus de la moyenne Next.js (~200 ko)."
+    },
+    {
+      "id": "note-seo",
+      "x": 1560,
+      "y": 1900,
+      "w": 390,
+      "text": "SEO — les gains concrets\n\n• Le titre H1 contient enfin une requête réelle : les gens cherchent « gaspillage alimentaire », pas « maîtrisez votre frigo ».\n\n• Le visuel produit est du texte HTML, pas une image : chaque nom d'aliment est indexable.\n\n• Le bloc FAQ des tarifs alimente un balisage FAQPage → réponses affichées directement dans Google.\n\n• Trois témoignages authentiques permettent le balisage Review. Les faux exposent à une pénalité manuelle Google.\n\n• Chiffre sourcé + lien ADEME = signal E-E-A-T, celui qui compte sur les sujets santé/argent."
+    },
+    {
+      "id": "note-proof",
+      "x": -470,
+      "y": 2240,
+      "w": 390,
+      "text": "PREUVE SOCIALE\n\nLes crochets [N], [NOTE], [AVIS 1] sont volontaires : ce sont les seuls chiffres que je ne peux pas inventer.\n\nAujourd'hui le site affiche « 10 000+ téléchargements » et trois témoignages étiquetés « Exemple illustratif ». Un visiteur qui lit cette étiquette comprend que le reste est peut-être inventé aussi — c'est plus coûteux que de ne rien afficher.\n\nTant que les vrais avis n'existent pas : supprimer la section plutôt que la remplir."
+    },
+    {
+      "id": "note-bento",
+      "x": -470,
+      "y": 1060,
+      "w": 390,
+      "text": "BENTO\n\n67 % des meilleurs sites SaaS utilisent ce format asymétrique : +47 % de temps passé, +38 % de clics.\n\nLa grande tuile va à la dictée vocale — le seul argument que les concurrents n'ont pas. Les six cartes identiques actuelles donnent le même poids à « rangements illimités » qu'à ce qui vous différencie.\n\nChaque tuile MONTRE au lieu de décrire : la phrase dictée devient trois étiquettes, les trois onglets de courses affichent leurs compteurs."
+    },
+    {
+      "id": "note-color",
+      "x": -470,
+      "y": 3280,
+      "w": 390,
+      "text": "COULEUR\n\nLa couleur ne sert plus à décorer : elle porte une information. Rouge = 1 jour, ambre = 3 jours, vert = 8 jours. C'est la leçon de Yuka, dont tout le design repose là-dessus.\n\nConséquence directe : les icônes restent noir et blanc (comme demandé), et la couleur garde son pouvoir d'alerte parce qu'elle est rare.\n\nLa palette reste la vôtre — émeraude, ambre, bleu profond — simplement assombrie pour tenir le contraste AA sur fond sombre."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts are self-hosted by next/font/google in app/layout.tsx.
+   Do NOT re-add an @import here — it duplicates the download and
+   reintroduces the layout shift next/font exists to remove. */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply font-sans text-ink bg-white antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    text-wrap: balance;
+  }
+
+  p { line-height: 1.65; }
+
+  /* Le header est fixe (h-16 / sm:h-20). Sans cette marge, une navigation par
+     ancre place la cible sous le header et le titre est masqué. */
+  :target,
+  section[id],
+  h1[id], h2[id], h3[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-600 ring-offset-2;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+  }
+
+  .container-max {
+    @apply max-w-6xl mx-auto;
+  }
+
+  .heading-xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight;
+  }
+
+  .heading-lg {
+    @apply text-3xl sm:text-4xl font-bold leading-tight tracking-tight;
+  }
+
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-bold leading-snug;
+  }
+
+  .heading-sm {
+    @apply text-lg sm:text-xl font-semibold;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.1em] uppercase text-primary-700;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl
+           bg-primary-600 text-white font-semibold text-base
+           shadow-cta hover:bg-primary-700 active:bg-primary-800
+           transition-colors duration-200
+           focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2
+           min-h-[48px];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl
+           bg-white text-ink font-semibold text-base border border-gray-300
+           hover:border-gray-400 hover:bg-gray-50 active:bg-gray-100
+           transition-colors duration-200 min-h-[48px];
+  }
+
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl
+           bg-transparent text-white font-semibold text-base border border-white/40
+           hover:bg-white/10 active:bg-white/20
+           transition-colors duration-200 min-h-[48px];
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-card border border-gray-200
+           transition-shadow duration-200;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+
+  /* Scroll reveal — classes added by ScrollReveal.tsx via IntersectionObserver.
+     Never rendered by SSR, so there is no flash of invisible content. */
+  .reveal-hidden {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  .reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-thumb { background: #94A3B8; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #64748B; }

@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #0B7D57; text-decoration: none; }
+    a:hover { color: #085F42; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; height: 1020px; background: #F7FAFA; font-family: 'Instrument Sans', system-ui, sans-serif; color: #0F1F24; padding: 78px 72px;">
+
+  <!-- Section head -->
+  <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 44px;">
+    <div style="display: flex; flex-direction: column; gap: 14px; max-width: 46ch;">
+      <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6C858C;">Ce que fait l’app</span>
+      <h2 style="font-family: 'Instrument Serif', Georgia, serif; font-size: 46px; font-weight: 400; line-height: 1.08; letter-spacing: -0.015em; margin: 0; text-wrap: balance;">
+        Six choses, faites <span style="font-style: italic;">correctement</span>.
+      </h2>
+    </div>
+    <span style="font-size: 14px; color: #6C858C; padding-bottom: 6px;">Aucune n’est payante pour commencer</span>
+  </div>
+
+  <!-- Bento: asymmetric, pure CSS grid, no JS -->
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 244px; gap: 16px;">
+
+    <!-- Lead tile: the differentiator gets the space -->
+    <div style="grid-column: span 2; grid-row: span 2; background: #0F1F24; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; color: #E8F0F1;">
+      <div style="display: flex; flex-direction: column; gap: 13px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3l1.9 5.8L20 10.5l-6.1 1.7L12 18l-1.9-5.8L4 10.5l6.1-1.7z"/>
+        </svg>
+        <h3 style="font-size: 24px; font-weight: 600; margin: 0; letter-spacing: -0.01em;">Dictez, ne saisissez pas</h3>
+        <p style="font-size: 15px; line-height: 1.55; color: #A9C0C6; margin: 0; max-width: 34ch;">
+          Écrivez votre course comme vous la diriez. L’app découpe, quantifie et range chaque article.
+        </p>
+      </div>
+
+      <!-- Show the mechanism, don't describe it -->
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <div style="background: rgba(232,240,241,0.07); border: 1px solid rgba(232,240,241,0.12); border-radius: 11px; padding: 13px 15px; font-size: 14px; color: #E8F0F1;">
+          2 yaourts, 500 g de jambon et du lait
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; padding-left: 4px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </div>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <span style="background: #E4F6ED; color: #0B7D57; font-size: 12.5px; font-weight: 500; padding: 7px 12px; border-radius: 8px;">Yaourt nature · 2</span>
+          <span style="background: #E4F6ED; color: #0B7D57; font-size: 12.5px; font-weight: 500; padding: 7px 12px; border-radius: 8px;">Jambon · 500 g</span>
+          <span style="background: #E4F6ED; color: #0B7D57; font-size: 12.5px; font-weight: 500; padding: 7px 12px; border-radius: 8px;">Lait · 1 L</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alerts -->
+    <div style="grid-column: span 2; background: #FFFFFF; border: 1px solid #E3EAEB; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between;">
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F1F24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        </svg>
+        <h3 style="font-size: 19px; font-weight: 600; margin: 0; letter-spacing: -0.01em;">Prévenu avant, pas après</h3>
+        <p style="font-size: 14px; line-height: 1.5; color: #6C858C; margin: 0; max-width: 36ch;">
+          Choisissez le délai — 1, 3 ou 7 jours. Une notification, pas dix.
+        </p>
+      </div>
+      <div style="display: flex; gap: 7px;">
+        <span style="border: 1px solid #DCE5E7; border-radius: 7px; padding: 6px 13px; font-size: 12.5px; color: #6C858C;">1 j</span>
+        <span style="background: #0F1F24; color: #FFFFFF; border-radius: 7px; padding: 6px 13px; font-size: 12.5px; font-weight: 500;">3 j</span>
+        <span style="border: 1px solid #DCE5E7; border-radius: 7px; padding: 6px 13px; font-size: 12.5px; color: #6C858C;">7 j</span>
+      </div>
+    </div>
+
+    <!-- Sync -->
+    <div style="background: #FFFFFF; border: 1px solid #E3EAEB; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 11px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F1F24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12a9 9 0 0 1-9 9 9 9 0 0 1-8.5-6"/><path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 8.5 6"/>
+        <path d="M21 3v6h-6M3 21v-6h6"/>
+      </svg>
+      <h3 style="font-size: 17px; font-weight: 600; margin: 0; letter-spacing: -0.01em;">Toute la maison</h3>
+      <p style="font-size: 13.5px; line-height: 1.5; color: #6C858C; margin: 0;">
+        Chacun voit le même frigo, en direct. Marche hors-ligne.
+      </p>
+    </div>
+
+    <!-- Storage -->
+    <div style="background: #FFFFFF; border: 1px solid #E3EAEB; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 11px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F1F24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/>
+        <rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/>
+      </svg>
+      <h3 style="font-size: 17px; font-weight: 600; margin: 0; letter-spacing: -0.01em;">Frigo, congélo, placard</h3>
+      <p style="font-size: 13.5px; line-height: 1.5; color: #6C858C; margin: 0;">
+        Autant de rangements que vous voulez.
+      </p>
+    </div>
+
+    <!-- Shopping list -->
+    <div style="grid-column: span 2; background: #FFFFFF; border: 1px solid #E3EAEB; border-radius: 18px; padding: 28px; display: flex; align-items: center; gap: 26px;">
+      <div style="display: flex; flex-direction: column; gap: 11px; flex-grow: 1;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F1F24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <h3 style="font-size: 19px; font-weight: 600; margin: 0; letter-spacing: -0.01em;">La liste se fait toute seule</h3>
+        <p style="font-size: 14px; line-height: 1.5; color: #6C858C; margin: 0; max-width: 30ch;">
+          Ce qui manque, ce qui s’épuise, ce qui presse — trié pour vous.
+        </p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px; width: 178px; flex-shrink: 0;">
+        <div style="display: flex; align-items: center; justify-content: space-between; background: #FEE9E9; border-radius: 8px; padding: 9px 12px;">
+          <span style="font-size: 12.5px; color: #C0353C; font-weight: 500;">Urgent</span>
+          <span style="font-size: 12.5px; color: #C0353C;">3</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; background: #FEF3DC; border-radius: 8px; padding: 9px 12px;">
+          <span style="font-size: 12.5px; color: #96660C; font-weight: 500;">Stock faible</span>
+          <span style="font-size: 12.5px; color: #96660C;">5</span>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between; background: #EEF3F4; border-radius: 8px; padding: 9px 12px;">
+          <span style="font-size: 12.5px; color: #55707A; font-weight: 500;">À acheter</span>
+          <span style="font-size: 12.5px; color: #55707A;">8</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy -->
+    <div style="grid-column: span 2; background: #FFFFFF; border: 1px solid #E3EAEB; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between;">
+      <div style="display: flex; flex-direction: column; gap: 11px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F1F24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+        </svg>
+        <h3 style="font-size: 19px; font-weight: 600; margin: 0; letter-spacing: -0.01em;">Vos courses ne se revendent pas</h3>
+        <p style="font-size: 14px; line-height: 1.5; color: #6C858C; margin: 0; max-width: 38ch;">
+          Serveurs en Europe, chiffrement AES-256, aucune publicité ciblée. Export ou suppression en deux clics.
+        </p>
+      </div>
+      <div style="display: flex; gap: 20px; align-items: center;">
+        <span style="font-size: 12px; font-weight: 600; color: #55707A; letter-spacing: 0.04em;">RGPD</span>
+        <span style="font-size: 12px; font-weight: 600; color: #55707A; letter-spacing: 0.04em;">AES-256</span>
+        <span style="font-size: 12px; font-weight: 600; color: #55707A; letter-spacing: 0.04em;">TLS 1.3</span>
+        <span style="font-size: 12px; font-weight: 600; color: #55707A; letter-spacing: 0.04em;">Hébergé en UE</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

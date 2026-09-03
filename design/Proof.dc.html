@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #0B7D57; text-decoration: none; }
+    a:hover { color: #085F42; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; height: 880px; background: #FFFFFF; font-family: 'Instrument Sans', system-ui, sans-serif; color: #0F1F24; padding: 78px 72px; display: flex; flex-direction: column; gap: 52px;">
+
+  <!-- Numbers first: the strongest proof, largest type -->
+  <div style="display: flex; flex-direction: column; gap: 34px;">
+    <div style="display: flex; flex-direction: column; gap: 12px; max-width: 52ch;">
+      <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6C858C;">La preuve</span>
+      <h2 style="font-family: 'Instrument Serif', Georgia, serif; font-size: 46px; font-weight: 400; line-height: 1.08; letter-spacing: -0.015em; margin: 0; text-wrap: balance;">
+        Ce que ça change, <span style="font-style: italic;">chiffré</span>.
+      </h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 1px solid #E3EAEB; border-bottom: 1px solid #E3EAEB;">
+      <div style="display: flex; flex-direction: column; gap: 7px; padding: 28px 30px 28px 0; border-right: 1px solid #E3EAEB;">
+        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 46px; line-height: 1; letter-spacing: -0.02em;">[N]</span>
+        <span style="font-size: 14px; color: #6C858C;">foyers équipés</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px; padding: 28px 30px; border-right: 1px solid #E3EAEB;">
+        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 46px; line-height: 1; letter-spacing: -0.02em;">[NOTE]</span>
+        <span style="font-size: 14px; color: #6C858C;">sur l’App Store · [N] avis</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px; padding: 28px 30px; border-right: 1px solid #E3EAEB;">
+        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 46px; line-height: 1; letter-spacing: -0.02em; color: #0B7D57;">465 €</span>
+        <span style="font-size: 14px; color: #6C858C;">gaspillés par foyer et par an<br><span style="font-size: 12px; color: #93A8AE;">source ADEME 2023</span></span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px; padding: 28px 0 28px 30px;">
+        <span style="font-family: 'Instrument Serif', Georgia, serif; font-size: 46px; line-height: 1; letter-spacing: -0.02em;">4 s</span>
+        <span style="font-size: 14px; color: #6C858C;">pour ajouter une course dictée</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials: three real ones, no filler -->
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;">
+
+    <div style="border: 1px solid #E3EAEB; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; min-height: 232px;">
+      <p style="font-size: 15.5px; line-height: 1.6; margin: 0; color: #26424B;">
+        [AVIS 1 — collez ici un vrai avis App Store, 2 à 3 lignes maximum]
+      </p>
+      <div style="display: flex; align-items: center; gap: 11px;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: #EEF3F4; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #55707A;">[XX]</div>
+        <div style="display: flex; flex-direction: column; gap: 1px;">
+          <span style="font-size: 13.5px; font-weight: 500;">[Prénom]</span>
+          <span style="font-size: 12px; color: #93A8AE;">[Profil]</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="border: 1px solid #E3EAEB; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; min-height: 232px;">
+      <p style="font-size: 15.5px; line-height: 1.6; margin: 0; color: #26424B;">
+        [AVIS 2 — collez ici un vrai avis App Store, 2 à 3 lignes maximum]
+      </p>
+      <div style="display: flex; align-items: center; gap: 11px;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: #EEF3F4; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #55707A;">[XX]</div>
+        <div style="display: flex; flex-direction: column; gap: 1px;">
+          <span style="font-size: 13.5px; font-weight: 500;">[Prénom]</span>
+          <span style="font-size: 12px; color: #93A8AE;">[Profil]</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="border: 1px solid #E3EAEB; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; min-height: 232px;">
+      <p style="font-size: 15.5px; line-height: 1.6; margin: 0; color: #26424B;">
+        [AVIS 3 — collez ici un vrai avis App Store, 2 à 3 lignes maximum]
+      </p>
+      <div style="display: flex; align-items: center; gap: 11px;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; background: #EEF3F4; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; color: #55707A;">[XX]</div>
+        <div style="display: flex; flex-direction: column; gap: 1px;">
+          <span style="font-size: 13.5px; font-weight: 500;">[Prénom]</span>
+          <span style="font-size: 12px; color: #93A8AE;">[Profil]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Honest note about the placeholders -->
+  <div style="display: flex; align-items: center; gap: 11px; padding: 15px 20px; background: #FDF7EA; border: 1px solid #F2E2BE; border-radius: 12px;">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#96660C" stroke-width="1.6" stroke-linecap="round" style="flex-shrink: 0;">
+      <circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5v.01"/>
+    </svg>
+    <span style="font-size: 13.5px; color: #7A5409; line-height: 1.5;">
+      Cette section ne se met en ligne qu’avec de vrais avis. Trois témoignages authentiques valent mieux que neuf inventés — et un avis fabriqué se repère.
+    </span>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

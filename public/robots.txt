@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+
+Crawl-delay: 1
+
+Sitemap: https://smartfridge.app/sitemap.xml

@@ -1,0 +1,21 @@
+{
+  "name": "SmartFridge",
+  "short_name": "SmartFridge",
+  "description": "Suivez ce que contient votre frigo et ne jetez plus ce que vous avez oublié.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0A7CD4",
+  "background_color": "#ffffff",
+  "lang": "fr",
+  "categories": ["food", "lifestyle", "productivity"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #34D399; text-decoration: none; }
+    a:hover { color: #6EE7B7; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 390px; height: 844px; background: #08262F; font-family: 'Instrument Sans', system-ui, sans-serif; color: #E8F0F1; display: flex; flex-direction: column; overflow: hidden;">
+
+  <!-- Nav: logo + one 44px target -->
+  <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; flex-shrink: 0;">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8F0F1" stroke-width="1.5" stroke-linecap="round">
+        <rect x="5" y="2" width="14" height="20" rx="3"/><path d="M5 10h14"/><path d="M9 6v2M9 14v3"/>
+      </svg>
+      <span style="font-size: 16px; font-weight: 600; letter-spacing: -0.01em;">SmartFridge</span>
+    </div>
+    <div style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; margin-right: -10px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8F0F1" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </div>
+  </div>
+
+  <div style="padding: 22px 20px 0; display: flex; flex-direction: column; gap: 20px; flex-grow: 1;">
+
+    <!-- Proof stays above the fold on mobile too -->
+    <div style="display: flex; align-items: center; gap: 8px; align-self: flex-start; border: 1px solid rgba(232,240,241,0.16); border-radius: 999px; padding: 6px 13px 6px 10px;">
+      <div style="display: flex; gap: 1.5px;">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="#FBBF24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+      </div>
+      <span style="font-size: 12px; color: #C6D8DC;">[NOTE]/5 · [N] avis</span>
+    </div>
+
+    <h1 style="font-family: 'Instrument Serif', Georgia, serif; font-size: 46px; line-height: 0.98; font-weight: 400; letter-spacing: -0.02em; margin: 0;">
+      Vous jetez<br><span style="font-style: italic; color: #34D399;">465&nbsp;€</span> de<br>nourriture par an.
+    </h1>
+
+    <p style="font-size: 16px; line-height: 1.5; color: #A9C0C6; margin: 0;">
+      SmartFridge suit ce qu’il y a dans votre frigo et vous prévient avant que ça périme.
+    </p>
+
+    <!-- Single full-width action, 52px tall -->
+    <div style="display: flex; align-items: center; justify-content: center; gap: 9px; background: #34D399; color: #052B22; height: 52px; border-radius: 12px; font-size: 16px; font-weight: 600;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+      </svg>
+      Télécharger gratuitement
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 12px; color: #7E979E; margin-top: -8px;">
+      <span>Sans carte bancaire</span>
+      <span style="width: 3px; height: 3px; border-radius: 50%; background: #4A6771;"></span>
+      <span>iOS 16+ · Android 8+</span>
+    </div>
+
+    <!-- Product peeks above the fold: cropped, not shrunk -->
+    <div style="margin-top: 6px; background: #FFFFFF; border-radius: 20px 20px 0 0; padding: 18px 18px 0; color: #0F1F24; flex-grow: 1;">
+      <div style="display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em;">Mon frigo</span>
+          <span style="font-size: 12px; color: #6C858C;">12 articles · 3 à consommer</span>
+        </div>
+        <div style="width: 30px; height: 30px; border-radius: 50%; border: 1px solid #DCE5E7; display: flex; align-items: center; justify-content: center;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F1F24" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid #F0F4F5;">
+        <div style="width: 36px; height: 36px; border-radius: 10px; background: #FEE9E9; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <span style="font-size: 14px; font-weight: 700; color: #C0353C; line-height: 1;">1</span>
+          <span style="font-size: 8px; color: #C0353C; line-height: 1.2;">jour</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1;">
+          <span style="font-size: 14px; font-weight: 500;">Yaourts nature</span>
+          <span style="font-size: 11.5px; color: #81959C;">6 unités</span>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; padding: 11px 0; border-bottom: 1px solid #F0F4F5;">
+        <div style="width: 36px; height: 36px; border-radius: 10px; background: #FEF3DC; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <span style="font-size: 14px; font-weight: 700; color: #96660C; line-height: 1;">3</span>
+          <span style="font-size: 8px; color: #96660C; line-height: 1.2;">jours</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1;">
+          <span style="font-size: 14px; font-weight: 500;">Lait entier</span>
+          <span style="font-size: 11.5px; color: #81959C;">1 L</span>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px; padding: 11px 0;">
+        <div style="width: 36px; height: 36px; border-radius: 10px; background: #E4F6ED; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+          <span style="font-size: 14px; font-weight: 700; color: #0B7D57; line-height: 1;">8</span>
+          <span style="font-size: 8px; color: #0B7D57; line-height: 1.2;">jours</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 1px; flex-grow: 1;">
+          <span style="font-size: 14px; font-weight: 500;">Carottes</span>
+          <span style="font-size: 11.5px; color: #81959C;">500 g</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

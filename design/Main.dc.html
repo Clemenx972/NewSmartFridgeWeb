@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #34D399; text-decoration: none; }
+    a:hover { color: #6EE7B7; }
+    * { box-sizing: border-box; }
+  </style>
+</helmet>
+
+<div style="width: 1440px; height: 900px; background: #08262F; font-family: 'Instrument Sans', system-ui, sans-serif; color: #E8F0F1; position: relative; overflow: hidden;">
+
+  <!-- Ambient wash: one radial, no image request -->
+  <div style="position: absolute; top: -240px; right: -160px; width: 900px; height: 900px; border-radius: 50%; background: radial-gradient(circle, rgba(52,211,153,0.10) 0%, rgba(8,38,47,0) 65%); pointer-events: none;"></div>
+
+  <!-- Navbar -->
+  <div style="position: relative; display: flex; align-items: center; justify-content: space-between; padding: 26px 72px; border-bottom: 1px solid rgba(232,240,241,0.08);">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8F0F1" stroke-width="1.5" stroke-linecap="round">
+        <rect x="5" y="2" width="14" height="20" rx="3"/>
+        <path d="M5 10h14"/>
+        <path d="M9 6v2M9 14v3"/>
+      </svg>
+      <span style="font-size: 17px; font-weight: 600; letter-spacing: -0.01em;">SmartFridge</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 34px; font-size: 14px; color: #A9C0C6;">
+      <span style="color: #E8F0F1;">Accueil</span>
+      <span>Fonctionnalités</span>
+      <span>Tarification</span>
+      <span>Sécurité</span>
+      <span>Contact</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px; background: #34D399; color: #052B22; padding: 10px 18px; border-radius: 9px; font-size: 14px; font-weight: 600;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+      </svg>
+      Télécharger
+    </div>
+  </div>
+
+  <!-- Hero body -->
+  <div style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 64px; padding: 68px 72px 0; align-items: start;">
+
+    <!-- Left column -->
+    <div style="display: flex; flex-direction: column; gap: 28px;">
+
+      <!-- Social proof INSIDE the hero -->
+      <div style="display: flex; align-items: center; gap: 10px; align-self: flex-start; border: 1px solid rgba(232,240,241,0.16); border-radius: 999px; padding: 7px 15px 7px 12px;">
+        <div style="display: flex; gap: 2px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="#FBBF24" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </div>
+        <span style="font-size: 13px; color: #C6D8DC;">[NOTE]/5 · [N] avis App Store</span>
+      </div>
+
+      <!-- The offer, one sentence -->
+      <h1 style="font-family: 'Instrument Serif', Georgia, serif; font-size: 76px; line-height: 0.98; font-weight: 400; letter-spacing: -0.02em; margin: 0; text-wrap: balance;">
+        Vous jetez<br><span style="font-style: italic; color: #34D399;">465&nbsp;€</span> de nourriture<br>par an.
+      </h1>
+
+      <p style="font-size: 19px; line-height: 1.55; color: #A9C0C6; margin: 0; max-width: 30ch;">
+        SmartFridge suit ce qu’il y a dans votre frigo et vous prévient avant que ça périme. Dictez vos courses, l’app fait le reste.
+      </p>
+
+      <!-- ONE primary action + QR handoff -->
+      <div style="display: flex; align-items: center; gap: 24px; margin-top: 4px;">
+        <div style="display: flex; align-items: center; gap: 10px; background: #34D399; color: #052B22; padding: 16px 26px; border-radius: 11px; font-size: 16px; font-weight: 600;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+          </svg>
+          Télécharger gratuitement
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 62px; height: 62px; background: #E8F0F1; border-radius: 8px; padding: 6px;">
+            <svg viewBox="0 0 29 29" width="50" height="50" shape-rendering="crispEdges">
+              <rect width="29" height="29" fill="#E8F0F1"/>
+              <g fill="#08262F">
+                <rect x="1" y="1" width="7" height="1"/><rect x="1" y="7" width="7" height="1"/>
+                <rect x="1" y="1" width="1" height="7"/><rect x="7" y="1" width="1" height="7"/>
+                <rect x="3" y="3" width="3" height="3"/>
+                <rect x="21" y="1" width="7" height="1"/><rect x="21" y="7" width="7" height="1"/>
+                <rect x="21" y="1" width="1" height="7"/><rect x="27" y="1" width="1" height="7"/>
+                <rect x="23" y="3" width="3" height="3"/>
+                <rect x="1" y="21" width="7" height="1"/><rect x="1" y="27" width="7" height="1"/>
+                <rect x="1" y="21" width="1" height="7"/><rect x="7" y="21" width="1" height="7"/>
+                <rect x="3" y="23" width="3" height="3"/>
+                <rect x="10" y="2" width="1" height="1"/><rect x="12" y="1" width="1" height="2"/><rect x="14" y="3" width="1" height="1"/>
+                <rect x="11" y="5" width="2" height="1"/><rect x="15" y="6" width="1" height="2"/><rect x="10" y="9" width="3" height="1"/>
+                <rect x="2" y="10" width="1" height="2"/><rect x="5" y="11" width="2" height="1"/><rect x="8" y="12" width="1" height="1"/>
+                <rect x="11" y="11" width="1" height="3"/><rect x="14" y="10" width="2" height="1"/><rect x="17" y="12" width="1" height="2"/>
+                <rect x="20" y="10" width="1" height="1"/><rect x="23" y="11" width="3" height="1"/><rect x="26" y="13" width="1" height="2"/>
+                <rect x="1" y="15" width="2" height="1"/><rect x="4" y="16" width="1" height="2"/><rect x="7" y="15" width="2" height="1"/>
+                <rect x="10" y="16" width="1" height="1"/><rect x="13" y="15" width="1" height="3"/><rect x="16" y="17" width="2" height="1"/>
+                <rect x="19" y="15" width="1" height="2"/><rect x="22" y="16" width="1" height="1"/><rect x="25" y="15" width="2" height="1"/>
+                <rect x="10" y="20" width="1" height="2"/><rect x="12" y="22" width="2" height="1"/><rect x="15" y="21" width="1" height="1"/>
+                <rect x="17" y="23" width="1" height="2"/><rect x="20" y="21" width="2" height="1"/><rect x="23" y="20" width="1" height="1"/>
+                <rect x="25" y="22" width="1" height="2"/><rect x="11" y="25" width="1" height="2"/><rect x="14" y="26" width="2" height="1"/>
+                <rect x="18" y="26" width="1" height="1"/><rect x="21" y="25" width="1" height="2"/><rect x="24" y="26" width="2" height="1"/>
+              </g>
+            </svg>
+          </div>
+          <div style="font-size: 12px; line-height: 1.45; color: #8AA5AC; max-width: 15ch;">
+            Scannez pour installer<br>sur votre téléphone
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 18px; font-size: 12.5px; color: #7E979E; margin-top: 2px;">
+        <span>Gratuit, sans carte bancaire</span>
+        <span style="width: 3px; height: 3px; border-radius: 50%; background: #4A6771;"></span>
+        <span>iOS 16+ · Android 8+</span>
+      </div>
+
+      <p style="font-size: 11px; color: #5E7B84; margin: 6px 0 0; line-height: 1.5;">
+        465 € : gaspillage alimentaire moyen par foyer et par an — <span style="text-decoration: underline; text-underline-offset: 2px;">ADEME, 2023</span>.
+      </p>
+    </div>
+
+    <!-- Right column: the product, in a device frame -->
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; padding-top: 6px;">
+
+      <!-- Device bezel -->
+      <div style="width: 372px; padding: 12px; border-radius: 38px; background: #0B1A1F; border: 1px solid rgba(232,240,241,0.14); box-shadow: 0 34px 80px -22px rgba(0,0,0,0.65);">
+      <div style="width: 348px; border-radius: 27px; background: #FFFFFF; overflow: hidden; color: #0F1F24;">
+
+        <div style="padding: 22px 20px 14px; display: flex; align-items: flex-start; justify-content: space-between;">
+          <div style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 19px; font-weight: 600; letter-spacing: -0.01em;">Mon frigo</span>
+            <span style="font-size: 12.5px; color: #6C858C;">12 articles · 3 à consommer</span>
+          </div>
+          <div style="width: 32px; height: 32px; border-radius: 50%; border: 1px solid #DCE5E7; display: flex; align-items: center; justify-content: center;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F1F24" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          </div>
+        </div>
+
+        <!-- Semantic colour: the number IS the status -->
+        <div style="display: flex; flex-direction: column; gap: 0; padding: 0 20px 8px;">
+
+          <div style="display: flex; align-items: center; gap: 13px; padding: 12px 0; border-bottom: 1px solid #F0F4F5;">
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: #FEE9E9; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;">
+              <span style="font-size: 15px; font-weight: 700; color: #C0353C; line-height: 1;">1</span>
+              <span style="font-size: 8.5px; color: #C0353C; line-height: 1.2;">jour</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;">
+              <span style="font-size: 14px; font-weight: 500;">Yaourts nature</span>
+              <span style="font-size: 11.5px; color: #81959C;">6 unités · Réfrigérateur</span>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 13px; padding: 12px 0; border-bottom: 1px solid #F0F4F5;">
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: #FEF3DC; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <span style="font-size: 15px; font-weight: 700; color: #96660C; line-height: 1;">3</span>
+              <span style="font-size: 8.5px; color: #96660C; line-height: 1.2;">jours</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;">
+              <span style="font-size: 14px; font-weight: 500;">Lait entier</span>
+              <span style="font-size: 11.5px; color: #81959C;">1 L · Réfrigérateur</span>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 13px; padding: 12px 0; border-bottom: 1px solid #F0F4F5;">
+            <div style="width: 38px; height: 38px; border-radius: 10px; background: #E4F6ED; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <span style="font-size: 15px; font-weight: 700; color: #0B7D57; line-height: 1;">8</span>
+              <span style="font-size: 8.5px; color: #0B7D57; line-height: 1.2;">jours</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1;">
+              <span style="font-size: 14px; font-weight: 500;">Carottes</span>
+              <span style="font-size: 11.5px; color: #81959C;">500 g · Bac à légumes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- The differentiator, shown not told -->
+        <div style="margin: 4px 16px 18px; padding: 13px 15px; border-radius: 13px; background: #0F1F24; display: flex; align-items: center; gap: 11px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+            <path d="M12 3l1.9 5.8L20 10.5l-6.1 1.7L12 18l-1.9-5.8L4 10.5l6.1-1.7z"/>
+          </svg>
+          <span style="font-size: 12.5px; color: #C6D8DC; line-height: 1.4;">
+            «&nbsp;<span style="color: #FFFFFF;">2 yaourts et 500 g de jambon</span>&nbsp;»<br>
+            <span style="color: #7E979E;">ajoutés en 4 s</span>
+          </span>
+        </div>
+      </div>
+      </div>
+
+      <span style="font-size: 11.5px; color: #5E7B84;">
+        Écran à remplacer par une capture réelle de l’application
+      </span>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
