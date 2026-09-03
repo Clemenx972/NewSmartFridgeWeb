@@ -65,12 +65,13 @@ export function Hero() {
               </li>
             </ul>
 
+            {/* Les deux destinations qui comptent : ce que fait l'app, et son prix. */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <CTAButton href="/contact" size="lg" ariaLabel="Être prévenu du lancement">
-                Être prévenu du lancement
+              <CTAButton href="/features" size="lg" ariaLabel="Découvrir les fonctionnalités">
+                Ce que fait l’application
               </CTAButton>
-              <CTAButton href="/features" variant="outline-white" size="lg">
-                Voir ce que fait l’app
+              <CTAButton href="/pricing" variant="outline-white" size="lg">
+                Voir les tarifs
               </CTAButton>
             </div>
 
