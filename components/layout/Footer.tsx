@@ -8,9 +8,8 @@ const footerLinks = {
     { href: '/pricing',  label: 'Tarifs'          },
   ],
   Légal: [
-    { href: '/security', label: 'Confidentialité' },
-    { href: '/privacy',  label: 'Données personnelles' },
-    { href: '/terms',    label: 'Conditions d’utilisation' },
+    { href: '/privacy', label: 'Confidentialité' },
+    { href: '/terms',   label: 'Conditions d’utilisation' },
   ],
   Contact: [
     { href: '/contact',  label: 'Nous écrire' },

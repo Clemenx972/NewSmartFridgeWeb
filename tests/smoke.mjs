@@ -19,7 +19,10 @@
 
 const BASE = process.argv[2] ?? 'http://localhost:3000'
 
-const ROUTES = ['/', '/features', '/pricing', '/security', '/contact', '/privacy', '/terms']
+// Les quatre pages de navigation, plus les deux pages légales du pied de page.
+// /security a été replié dans /privacy : il ne doit plus répondre.
+const ROUTES = ['/', '/features', '/pricing', '/contact', '/privacy', '/terms']
+const REMOVED_ROUTES = ['/security']
 
 let failures = 0
 let checks = 0
@@ -54,6 +57,16 @@ async function main() {
       res.status === 308
         ? 'got 308 — the HTTPS redirect is firing on localhost again'
         : `got ${res.status}`
+    )
+  }
+
+  // Une page retirée qui répond encore signale un fichier oublié.
+  for (const route of REMOVED_ROUTES) {
+    const res = await fetch(`${BASE}${route}`, { redirect: 'manual' })
+    check(
+      `GET ${route} → 404 (page retirée)`,
+      res.status === 404,
+      `got ${res.status} — cette page devait disparaître`
     )
   }
 

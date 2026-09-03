@@ -96,10 +96,16 @@ export const INFRA = {
   authEmails: 'Supabase Auth',
 } as const
 
+// Quatre entrées, pas plus. La confidentialité vit dans le pied de page :
+// c'est une page de référence, pas une étape du parcours d'un visiteur.
 export const NAV_LINKS = [
   { href: '/',          label: 'Accueil'         },
   { href: '/features',  label: 'Fonctionnalités' },
   { href: '/pricing',   label: 'Tarifs'          },
-  { href: '/security',  label: 'Confidentialité' },
   { href: '/contact',   label: 'Contact'         },
 ] as const
+
+// ─── Contact ─────────────────────────────────────────────────────────────────
+// ⚠ À REMPLACER par une adresse réellement relevée. Tant que ce domaine
+// n'existe pas, les messages envoyés ici ne parviennent à personne.
+export const CONTACT_EMAIL = 'support@smartfridge.app'
