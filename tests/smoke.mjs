@@ -144,7 +144,13 @@ async function main() {
   // When two headers() rules set the same key the last match wins, so the
   // catch-all page rule used to overwrite the immutable asset rule.
   console.log('\nCache policy')
-  const assetCache = (await fetch(`${BASE}/icon.svg`, { method: 'HEAD' })).headers.get('cache-control')
+  // Tester un fichier réel de public/ : une 404 renvoie no-store et ferait
+  // passer ce contrôle pour un échec de politique de cache.
+  const ASSET = '/icon-192.png'
+  const assetRes = await fetch(`${BASE}${ASSET}`, { method: 'HEAD' })
+  check(`${ASSET} exists`, assetRes.status === 200, `got ${assetRes.status}`)
+
+  const assetCache = assetRes.headers.get('cache-control')
   check('assets are immutable', (assetCache ?? '').includes('immutable'), `got ${assetCache}`)
 
   const pageCache = home.headers.get('cache-control')

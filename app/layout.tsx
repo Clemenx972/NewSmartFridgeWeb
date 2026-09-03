@@ -70,10 +70,9 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
     },
   },
-  icons: {
-    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
-    shortcut: '/icon.svg',
-  },
+  // Pas de champ `icons` ici : app/icon.png et app/apple-icon.png suivent la
+  // convention de fichiers de Next.js, qui génère les balises <link> et gère
+  // l'invalidation de cache. Déclarer `icons` en plus écraserait cette détection.
   manifest: '/manifest.json',
   alternates: { canonical: SITE_URL },
 }
@@ -103,7 +102,7 @@ const jsonLd = {
       '@id': `${SITE_URL}/#organization`,
       name: SITE_NAME,
       url: SITE_URL,
-      logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon.svg` },
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon-512.png`, width: 512, height: 512 },
       contactPoint: {
         '@type': 'ContactPoint',
         email: CONTACT_EMAIL,
