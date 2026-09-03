@@ -4,8 +4,9 @@ import { useState, useEffect, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Mail, ShieldCheck, Clock, Check, CircleAlert, Send, LoaderCircle } from 'lucide-react'
+import { Mail, Clock, Check, CircleAlert, Send, LoaderCircle } from 'lucide-react'
 import { cn } from '@/lib/cn'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 const schema = z.object({
   name: z.string().min(2, 'Nom trop court').max(100),
@@ -32,9 +33,8 @@ const subjects = [
 ]
 
 const contactInfos = [
-  { Icon: Mail,        title: 'Email support',         value: 'support@smartfridge.app', href: 'mailto:support@smartfridge.app' },
-  { Icon: ShieldCheck, title: 'Confidentialité / DPO', value: 'privacy@smartfridge.app', href: 'mailto:privacy@smartfridge.app' },
-  { Icon: Clock,       title: 'Temps de réponse',      value: '< 24 h ouvrées',          href: null },
+  { Icon: Mail,  title: 'Nous écrire',        value: CONTACT_EMAIL,    href: `mailto:${CONTACT_EMAIL}` },
+  { Icon: Clock, title: 'Temps de réponse',   value: 'Sous 48 h',      href: null },
 ]
 
 export default function ContactPage() {
@@ -154,9 +154,13 @@ export default function ContactPage() {
                     <div className="mb-6 p-4 bg-red-50 border border-red-300 rounded-xl text-red-800 flex items-start gap-3">
                       <CircleAlert className="w-5 h-5 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                       <div>
-                        <strong>Échec de l&apos;envoi</strong>
+                        <strong>Le message n&apos;est pas parti</strong>
                         <p className="text-sm mt-0.5">
-                          Réessayez, ou écrivez directement à support@smartfridge.app.
+                          Réessayez, ou écrivez directement à{' '}
+                          <a href={`mailto:${CONTACT_EMAIL}`} className="underline font-medium">
+                            {CONTACT_EMAIL}
+                          </a>{' '}
+                          — votre message ne sera pas perdu.
                         </p>
                       </div>
                     </div>

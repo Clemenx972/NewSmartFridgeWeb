@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
+import { CONTACT_EMAIL } from '@/lib/constants'
 
 /**
  * POST /api/contact
@@ -103,10 +104,21 @@ export async function POST(request: NextRequest) {
   }
 
   const resendApiKey = process.env.RESEND_API_KEY
+
   if (!resendApiKey) {
-    // No key configured (local dev): accept the submission without sending.
-    console.info('[contact] RESEND_API_KEY missing — message not sent', { subject })
-    return NextResponse.json({ success: true }, { status: 200 })
+    /*
+     * No mail provider configured, so the message cannot reach anyone.
+     *
+     * The previous version answered 200 here, which told the visitor "message
+     * sent" while nothing was sent. That is worse than an outage: the person
+     * believes they have been heard and never follows up. Fail loudly instead —
+     * the form surfaces the direct email address on error.
+     */
+    console.error('[contact] RESEND_API_KEY absente — le message ne peut pas être envoyé')
+    return NextResponse.json(
+      { error: 'Le formulaire n’est pas encore relié à une boîte mail.' },
+      { status: 503 }
+    )
   }
 
   try {
@@ -117,8 +129,8 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'SmartFridge Contact <noreply@smartfridge.app>',
-        to: ['support@smartfridge.app'],
+        from: `SmartFridge <noreply@${CONTACT_EMAIL.split('@')[1]}>`,
+        to: [CONTACT_EMAIL],
         reply_to: email,
         // Plain text only — nothing renders as HTML in the support inbox.
         subject: `[Contact] ${subject} — ${name}`,
