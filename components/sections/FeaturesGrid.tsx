@@ -13,8 +13,11 @@ export function FeaturesGrid() {
           </h2>
         </div>
 
-        {/* Bento — CSS grid only, no JavaScript */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[236px]">
+        {/* Bento — CSS grid only, no JavaScript.
+            Rows have a floor, not a fixed height: 236px keeps the tiles aligned,
+            but a card with more content than that (the store route and its four
+            aisles) must grow instead of spilling past its own border. */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:auto-rows-[minmax(236px,auto)]">
 
           {/* Lead tile: the differentiator gets the space */}
           <article className="md:col-span-2 md:row-span-2 bg-ink rounded-2xl p-8 flex flex-col justify-between text-white">
